@@ -25,7 +25,7 @@ export interface BlogPost {
   /** @format uint64 */
   id?: string;
   title?: string;
-  body?: string;
+  imageURL?: string;
 }
 
 /**

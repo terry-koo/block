@@ -8,10 +8,10 @@ export interface Post {
   creator: string;
   id: number;
   title: string;
-  body: string;
+  imageURL: string;
 }
 
-const basePost: object = { creator: "", id: 0, title: "", body: "" };
+const basePost: object = { creator: "", id: 0, title: "", imageURL: "" };
 
 export const Post = {
   encode(message: Post, writer: Writer = Writer.create()): Writer {
@@ -24,8 +24,8 @@ export const Post = {
     if (message.title !== "") {
       writer.uint32(26).string(message.title);
     }
-    if (message.body !== "") {
-      writer.uint32(34).string(message.body);
+    if (message.imageURL !== "") {
+      writer.uint32(34).string(message.imageURL);
     }
     return writer;
   },
@@ -47,7 +47,7 @@ export const Post = {
           message.title = reader.string();
           break;
         case 4:
-          message.body = reader.string();
+          message.imageURL = reader.string();
           break;
         default:
           reader.skipType(tag & 7);
@@ -74,10 +74,10 @@ export const Post = {
     } else {
       message.title = "";
     }
-    if (object.body !== undefined && object.body !== null) {
-      message.body = String(object.body);
+    if (object.imageURL !== undefined && object.imageURL !== null) {
+      message.imageURL = String(object.imageURL);
     } else {
-      message.body = "";
+      message.imageURL = "";
     }
     return message;
   },
@@ -87,7 +87,7 @@ export const Post = {
     message.creator !== undefined && (obj.creator = message.creator);
     message.id !== undefined && (obj.id = message.id);
     message.title !== undefined && (obj.title = message.title);
-    message.body !== undefined && (obj.body = message.body);
+    message.imageURL !== undefined && (obj.imageURL = message.imageURL);
     return obj;
   },
 
@@ -108,10 +108,10 @@ export const Post = {
     } else {
       message.title = "";
     }
-    if (object.body !== undefined && object.body !== null) {
-      message.body = object.body;
+    if (object.imageURL !== undefined && object.imageURL !== null) {
+      message.imageURL = object.imageURL;
     } else {
-      message.body = "";
+      message.imageURL = "";
     }
     return message;
   },

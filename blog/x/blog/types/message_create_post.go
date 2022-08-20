@@ -9,11 +9,11 @@ const TypeMsgCreatePost = "create_post"
 
 var _ sdk.Msg = &MsgCreatePost{}
 
-func NewMsgCreatePost(creator string, title string, body string) *MsgCreatePost {
+func NewMsgCreatePost(creator string, title string, imageURL string) *MsgCreatePost {
 	return &MsgCreatePost{
-		Creator: creator,
-		Title:   title,
-		Body:    body,
+		Creator:  creator,
+		Title:    title,
+		ImageURL: imageURL,
 	}
 }
 

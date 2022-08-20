@@ -62,7 +62,7 @@ paths:
                       format: uint64
                     title:
                       type: string
-                    body:
+                    imageURL:
                       type: string
                 title: Returning a list of posts
               pagination:
@@ -30558,7 +30558,7 @@ definitions:
         format: uint64
       title:
         type: string
-      body:
+      imageURL:
         type: string
   blog.blog.QueryParamsResponse:
     type: object
@@ -30582,7 +30582,7 @@ definitions:
               format: uint64
             title:
               type: string
-            body:
+            imageURL:
               type: string
         title: Returning a list of posts
       pagination:

@@ -8,7 +8,7 @@ message Post {
   string creator = 1;
   uint64 id = 2;
   string title = 3; 
-  string body = 4; 
+  string imageURL = 4; 
 }
 
 
